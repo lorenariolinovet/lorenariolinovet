@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Lorena Riolino — Médica Veterinária Nutróloga</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F5F2ED;
+    --bg2: #EDE9E2;
+    --sage: #6B8C74;
+    --sage-dark: #4A6B52;
+    --sage-light: #E4EDE6;
+    --sage-mid: #C2D4C6;
+    --pink: #F2C4C4;
+    --pink-light: #FBF0F0;
+    --text: #1C2B1F;
+    --text-muted: #6B7A6E;
+    --white: #FFFFFF;
+    --font: 'Plus Jakarta Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 48px; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(245,242,237,0.93); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107,140,116,0.12);
+  }
+  .nav-logo { font-size: 15px; font-weight: 700; color: var(--sage-dark); }
+  .nav-logo span { color: var(--text-muted); font-weight: 400; }
+  .nav-cta { background: var(--sage-dark); color: var(--white); font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--sage); }
+
+  .hero { min-height: 100vh; padding: 130px 48px 80px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; max-width: 1140px; margin: 0 auto; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage-dark); background: var(--sage-light); padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
+  .hero-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+  .hero h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 22px; }
+  .hero h1 .hl { color: var(--sage-dark); background: var(--sage-light); padding: 2px 10px; border-radius: 8px; display: inline-block; }
+  .hero h1 .pk { background: var(--pink); color: var(--text); padding: 2px 10px; border-radius: 8px; display: inline-block; }
+  .hero-desc { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; max-width: 460px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--sage-dark); color: var(--white); font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 100px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--sage); transform: translateY(-1px); }
+  .btn-ghost { font-size: 14px; font-weight: 500; color: var(--sage-dark); text-decoration: none; padding: 14px 20px; border: 1.5px solid var(--sage-mid); border-radius: 100px; transition: all 0.2s; }
+  .btn-ghost:hover { background: var(--sage-light); }
+
+  .hero-visual { display: flex; justify-content: center; }
+  .hero-card { background: var(--white); border-radius: 24px; padding: 32px; width: 100%; max-width: 340px; box-shadow: 0 20px 60px rgba(74,107,82,0.1); position: relative; }
+  .hero-card-badge { position: absolute; top: -14px; left: 24px; background: var(--pink); color: var(--text); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; }
+  .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; }
+  .hero-card h3 { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 20px; line-height: 1.3; letter-spacing: -0.02em; }
+  .hero-card-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .ck { width: 18px; height: 18px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 10px; color: var(--sage-dark); }
+  .hero-card-div { height: 1px; background: var(--bg2); margin: 18px 0; }
+  .hero-card-crmv { font-size: 11px; color: var(--text-muted); }
+
+  section { padding: 90px 48px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 12px; }
+  .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; color: var(--text); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; }
+  .section-title .hl { color: var(--sage-dark); }
+  .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 500px; margin-bottom: 52px; }
+
+  .sobre { background: var(--sage-dark); }
+  .sobre .section-tag { color: var(--sage-mid); }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center; }
+  .sobre-stats { display: flex; flex-direction: column; gap: 20px; }
+  .stat { background: rgba(255,255,255,0.07); border-radius: 16px; padding: 20px 24px; }
+  .stat-number { font-size: 34px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 4px; letter-spacing: -0.03em; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .sobre-text p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.9; margin-bottom: 16px; }
+  .sobre-text p strong { color: var(--white); font-weight: 600; }
+
+  .etapas { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .etapa { background: var(--white); border-radius: 20px; padding: 26px 22px; }
+  .etapa-num { font-size: 12px; font-weight: 700; color: var(--sage); background: var(--sage-light); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .etapa h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
+  .etapa p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+  .planos { background: var(--bg2); }
+  .planos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .plano-card { background: var(--white); border-radius: 24px; padding: 30px 26px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .plano-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(74,107,82,0.1); }
+  .plano-card.featured { background: var(--sage-dark); }
+  .plano-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 18px; display: inline-block; width: fit-content; }
+  .bg-green { background: var(--sage-light); color: var(--sage-dark); }
+  .bg-white { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); }
+  .bg-pink { background: var(--pink-light); color: #a05050; }
+  .plano-nome { font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 4px; }
+  .plano-card.featured .plano-nome { color: var(--white); }
+  .plano-periodo { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+  .plano-card.featured .plano-periodo { color: rgba(255,255,255,0.45); }
+  .plano-preco { font-size: 42px; font-weight: 800; color: var(--text); line-height: 1; letter-spacing: -0.04em; margin-bottom: 22px; }
+  .plano-preco sup { font-size: 18px; vertical-align: super; font-weight: 600; }
+  .plano-card.featured .plano-preco { color: var(--white); }
+  .plano-div { height: 1px; background: var(--bg2); margin-bottom: 18px; }
+  .plano-card.featured .plano-div { background: rgba(255,255,255,0.12); }
+  .plano-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-muted); margin-bottom: 9px; line-height: 1.5; }
+  .plano-card.featured .plano-item { color: rgba(255,255,255,0.65); }
+  .pc { width: 17px; height: 17px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 9px; color: var(--sage-dark); }
+  .plano-card.featured .pc { background: rgba(255,255,255,0.15); color: var(--white); }
+  .plano-suporte { margin-top: 14px; padding: 12px 14px; background: var(--sage-light); border-radius: 12px; font-size: 12px; color: var(--sage-dark); line-height: 1.5; flex-grow: 1; }
+  .plano-card.featured .plano-suporte { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.65); }
+  .plano-suporte strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  .plano-card.featured .plano-suporte strong { color: var(--white); }
+  .plano-btn { display: block; text-align: center; margin-top: 20px; padding: 13px; border-radius: 100px; font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+  .pb-dark { background: var(--sage-dark); color: var(--white); }
+  .pb-dark:hover { background: var(--sage); }
+  .pb-white { background: var(--white); color: var(--sage-dark); }
+  .pb-white:hover { background: var(--bg); }
+  .pb-outline { background: transparent; color: var(--sage-dark); border: 1.5px solid var(--sage-mid); }
+  .pb-outline:hover { background: var(--sage-light); }
+
+  .faq-list { max-width: 700px; }
+  .faq-item { border-bottom: 1px solid rgba(107,140,116,0.15); }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; letter-spacing: -0.01em; }
+  .faq-q:hover { color: var(--sage-dark); }
+  .faq-icon { width: 26px; height: 26px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; color: var(--sage-dark); transition: transform 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--sage-dark); color: white; }
+  .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+
+  .cta-final { background: var(--pink-light); text-align: center; }
+  .cta-pill { display: inline-block; background: var(--pink); color: var(--text); font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  footer { background: var(--text); padding: 44px 48px; text-align: center; }
+  .footer-logo { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .footer-crmv { font-size: 12px; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+  .footer-links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+
+  .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .fade.in { opacity: 1; transform: none; }
+
+  @media(max-width:768px){
+    nav { padding: 16px 20px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 36px; }
+    .hero-visual { display: none; }
+    section { padding: 60px 20px; }
+    .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
+    .etapas { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .planos-grid { grid-template-columns: 1fr; }
+    footer { padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dra. Lorena Riolino <span>· Vet Nutróloga</span></div>
+  <a href="#planos" class="nav-cta">Agendar consulta</a>
+</nav>
+
+<section style="padding:0">
+  <div class="hero">
+    <div class="fade">
+      <span class="hero-tag">Nutrologia Veterinária Online</span>
+      <h1>A dieta certa para o seu cão, <span class="hl">formulada</span> com <span class="pk">ciência</span></h1>
+      <p class="hero-desc">Consultas online personalizadas para tutores que querem oferecer alimentação natural ou mista com segurança, equilíbrio e respaldo profissional.</p>
+      <div class="hero-actions">
+        <a href="#planos" class="btn-primary">Ver planos e agendar</a>
+        <a href="#como-funciona" class="btn-ghost">Como funciona</a>
+      </div>
+    </div>
+    <div class="hero-visual fade">
+      <div class="hero-card">
+        <div class="hero-card-badge">Atendimento online</div>
+        <div class="hero-card-label">O que você recebe</div>
+        <h3>Plano alimentar completo e personalizado</h3>
+        <div class="hero-card-item"><div class="ck">✓</div><span>Dieta formulada individualmente para o seu cão</span></div>
+        <div class="hero-card-item"><div class="ck">✓</div><span>Receita detalhada com passo a passo</span></div>
+        <div class="hero-card-item"><div class="ck">✓</div><span>Suporte para dúvidas após a consulta</span></div>
+        <div class="hero-card-item"><div class="ck">✓</div><span>Entrega em até 5 dias úteis</span></div>
+        <div class="hero-card-div"></div>
+        <div class="hero-card-crmv">Dra. Lorena Riolino — CRMV 51731/SP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-grid fade">
+      <div class="sobre-stats">
+        <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Online — atendo em todo o Brasil</div></div>
+        <div class="stat"><div class="stat-number">+5</div><div class="stat-label">Anos de experiência em nutrologia animal</div></div>
+        <div class="stat"><div class="stat-number">Sextas</div><div class="stat-label">Horários disponíveis para consultas</div></div>
+      </div>
+      <div class="sobre-text">
+        <span class="section-tag">Sobre mim</span>
+        <h2 class="section-title" style="color:white;margin-bottom:20px;">Médica veterinária apaixonada por nutrição animal</h2>
+        <p>Sou a Dra. Lorena Riolino, médica veterinária nutróloga (CRMV 51731/SP), especializada em nutrição de cães. Acredito que a alimentação é a base da saúde, e que cada animal merece um plano pensado especificamente para ele.</p>
+        <p>Trabalho com <strong>dietas naturais, mix feeding e formulações personalizadas</strong>, sempre com base científica e levando em conta a rotina do tutor — porque de nada adianta um plano perfeito no papel que não funciona na prática.</p>
+        <p>Minhas consultas são 100% online, com hora marcada, e você recebe tudo por escrito para seguir com segurança e confiança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="container">
+    <span class="section-tag">Processo</span>
+    <h2 class="section-title">Como funciona a <span class="hl">consulta</span></h2>
+    <p class="section-sub">Do agendamento ao plano pronto, sem depender de troca de mensagens.</p>
+    <div class="etapas fade">
+      <div class="etapa"><div class="etapa-num">01</div><h4>Escolha o plano</h4><p>Selecione o plano ideal, faça o pagamento e o agendamento é confirmado automaticamente.</p></div>
+      <div class="etapa"><div class="etapa-num">02</div><h4>Preencha o formulário</h4><p>Você recebe um formulário completo sobre seu cão: raça, peso, rotina, exames e histórico alimentar.</p></div>
+      <div class="etapa"><div class="etapa-num">03</div><h4>Consulta online</h4><p>Nos encontramos por videochamada na sexta agendada para avaliar e definir o melhor protocolo.</p></div>
+      <div class="etapa"><div class="etapa-num">04</div><h4>Receba o plano</h4><p>Em até 5 dias úteis você recebe o plano alimentar completo, a receita e o passo a passo de preparo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="planos" id="planos">
+  <div class="container">
+    <span class="section-tag">Planos</span>
+    <h2 class="section-title">Escolha o acompanhamento <span class="hl">ideal</span></h2>
+    <p class="section-sub">Todos os planos incluem consulta personalizada, plano alimentar completo e suporte para dúvidas. O pagamento garante o agendamento.</p>
+    <div class="planos-grid fade">
+      <div class="plano-card">
+        <span class="plano-badge bg-green">Consulta avulsa</span>
+        <div class="plano-nome">Essencial</div>
+        <div class="plano-periodo">Válido por 30 dias</div>
+        <div class="plano-preco"><sup>R$</sup>180</div>
+        <div class="plano-div"></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Consulta online (1 hora)</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Plano alimentar personalizado</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Receita e passo a passo</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Entrega em até 5 dias úteis</span></div>
+        <div class="plano-suporte"><strong>Suporte incluso</strong>Dúvidas por formulário, respondidas toda sexta por 30 dias</div>
+        <a href="#" class="plano-btn pb-outline">Agendar agora</a>
+      </div>
+      <div class="plano-card featured">
+        <span class="plano-badge bg-white">Mais escolhido</span>
+        <div class="plano-nome">Acompanhamento</div>
+        <div class="plano-periodo">3 meses de suporte</div>
+        <div class="plano-preco"><sup>R$</sup>320</div>
+        <div class="plano-div"></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Consulta inicial (1 hora)</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Plano alimentar completo</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Receita e passo a passo</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>1 retorno em 6 semanas (40 min)</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Ajuste do plano no retorno</span></div>
+        <div class="plano-suporte"><strong>Suporte incluso</strong>Dúvidas por formulário, respondidas toda sexta por 3 meses</div>
+        <a href="#" class="plano-btn pb-white">Agendar agora</a>
+      </div>
+      <div class="plano-card">
+        <span class="plano-badge bg-pink">Maior resultado</span>
+        <div class="plano-nome">Evolução</div>
+        <div class="plano-periodo">6 meses de acompanhamento</div>
+        <div class="plano-preco"><sup>R$</sup>550</div>
+        <div class="plano-div"></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Consulta inicial (1 hora)</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Plano alimentar completo</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Receita e passo a passo</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>2 retornos (2º e 5º mês, 40 min)</span></div>
+        <div class="plano-item"><div class="pc">✓</div><span>Ajustes a cada retorno</span></div>
+        <div class="plano-suporte"><strong>Suporte incluso</strong>Dúvidas por formulário + áudio de voz respondendo — toda sexta por 6 meses</div>
+        <a href="#" class="plano-btn pb-dark">Agendar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <span class="section-tag">Dúvidas frequentes</span>
+    <h2 class="section-title">Perguntas <span class="hl">frequentes</span></h2>
+    <p class="section-sub">As dúvidas mais comuns antes de agendar.</p>
+    <div class="faq-list fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">A dieta natural é segura para todos os cães?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Sim, quando formulada corretamente por um profissional. Cada animal tem necessidades específicas de acordo com raça, idade, peso e condição de saúde. A consulta garante que o plano seja completo e seguro, sem deficiências nutricionais.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Meu cão já come ração. Posso fazer a transição para alimentação natural?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Sim! A transição gradual é totalmente possível e segura. Na consulta, avaliamos o histórico e montamos um protocolo de transição personalizado. Também trabalhamos com mix feeding para quem prefere uma mudança parcial.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Como funciona a consulta online?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Após o pagamento, você preenche um formulário completo sobre seu cão. A consulta acontece por videochamada (Google Meet) em uma sexta, no horário agendado. Em até 5 dias úteis você recebe o plano alimentar completo e a receita por escrito.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Preciso trazer exames para a consulta?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Não é obrigatório, mas exames recentes enriquecem muito a avaliação, especialmente para cães com condições específicas. Se não tiver, a consulta acontece normalmente com base no histórico clínico.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Como funciona o suporte após a consulta?<span class="faq-icon">+</span></button>
+        <div class="faq-a">O suporte é feito por formulário — você envia sua dúvida a qualquer momento e eu respondo toda sexta em bloco. No plano Evolução, o retorno é por áudio de voz, mais pessoal. Os prazos são: 30 dias (Essencial), 3 meses (Acompanhamento) e 6 meses (Evolução).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Atende filhotes e cães idosos?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Sim! Atendo cães de todas as idades e portes. Cada plano é formulado individualmente, considerando a fase de vida do animal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container" style="max-width:580px;text-align:center;">
+    <div class="cta-pill">Pronta para começar</div>
+    <h2 class="section-title" style="margin-bottom:14px;">Seu cão merece uma alimentação <span class="hl">feita para ele</span></h2>
+    <p style="color:var(--text-muted);margin-bottom:32px;font-size:16px;line-height:1.8;">Escolha o plano, faça o pagamento e receba o agendamento confirmado. Sem esperar resposta, sem troca de mensagens.</p>
+    <a href="#planos" class="btn-primary" style="font-size:15px;padding:16px 36px;">Ver planos e agendar</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Dra. Lorena Riolino</div>
+  <div class="footer-crmv">Médica Veterinária Nutróloga — CRMV 51731/SP</div>
+  <div class="footer-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="https://instagram.com/vetlorenariolino" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
